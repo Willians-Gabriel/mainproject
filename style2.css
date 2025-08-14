@@ -1,0 +1,310 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    flex-direction: column;
+    scroll-behavior: smooth;
+    display: flex;
+    position: relative; 
+}
+
+/* Seção full screen com imagem */
+.parallax {
+    /* The image used */
+    background-image: url("https://i.imgur.com/3ymB4Zx.png");
+  
+    /* Set a specific height */
+    min-height: 100vh; 
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+.full-bg {
+    position: relative;
+    overflow: hidden;
+    min-height: 1366px;
+    display:flex ;
+    justify-content: center;
+    z-index: 0;
+}
+
+.full-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://i.imgur.com/xkowwq5.png') no-repeat center center;
+    background-size: cover;
+    transform: scaleX(-1); /* inverte só a imagem */
+    z-index: -1; /* deixa atrás do texto */
+}
+
+/* Texto dentro da seção de fundo */
+.full-bg .content {
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 900px;
+}
+/* Ceifador */
+section.full-bg .ceifador-img img {
+    width: 100%;
+    height: auto;
+}
+section.full-bg .ceifador-img {
+    position: absolute;
+    top: 42%;
+    left: 2%;
+    width: 60%;
+    max-width: 55%;
+    z-index: 9; /* um pouco abaixo do texto */
+}
+/* TEXTO */
+.texto {
+    color: #fff;
+    box-shadow: black;
+    font-size: 14px;
+    position: absolute;
+    top: 38%; /* ajusta a distância do topo */
+    left: 54%; /* ajusta a distância da esquerda */
+    max-width: 400PX; /* largura do bloco de texto */
+    z-index: 99999;
+    display: inline-block; /* necessário se quiser que o box-shadow se aplique apenas ao tamanho do texto */
+    line-height: 1.4;
+}
+.texto h1{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    line-height: 3;
+}
+/* Barras */
+h1.com-barra {
+    font-size: 26px;
+    line-height: 1.2;
+    margin-bottom: 0;
+}
+h1.com-barra::after {
+    content: "";
+    display: block;
+    width: 400px;
+    height: 3px;
+    background-color: #000000da;
+    margin-top: 1px;
+    margin-bottom: 16px;
+    margin-left: 0;
+}
+/* Seção normal (sem fundo) */
+.parte {
+    background-color: #fff;
+    padding: 30px;
+    margin: 20px 0; /* remove margens laterais */
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.514);
+    width: 100%;        /* Ocupar toda a largura disponível */
+    box-sizing: border-box; /* Inclui padding dentro da largura total */
+}
+
+.parte h2,
+.parte h3 {
+    font-style: italic;
+    color: #4CAF50;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.parte h4 {
+    margin: 5px 0 10px 0;
+    color: #333;
+}
+
+.parte p {
+    margin: 5px 0 15px 0;
+    line-height: 1.6;
+    color: #000000;
+}
+
+.parte ul {
+    margin-top: 5px;
+    margin-bottom: 20px; /* margem para separar lista do próximo conteúdo */
+    padding-left: 40px; /* recuo padrão para listas */
+}
+
+.parte li {
+    margin-bottom: 6px; /* espaçamento entre itens da lista */
+    color: #222;
+}
+
+.parte ul li strong {
+    font-weight: bold;
+    color: #111;
+}
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+tr:hover {
+    background-color: #f1f1f1;
+}
+#toggleButton {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+#toggleButton:hover {
+    background-color: #45a049;
+}
+#tableContainer {
+    display: none;
+}
+#lista-links a {
+    text-decoration: none;
+    color: black;
+    
+}
+#link-topo {
+    text-decoration: none;
+    color: white;
+    background-color: #45a049;
+    padding: 10px;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    box-shadow: 3px 3px 3px #333;
+}
+a {
+    transition: text-shadow 0.3s ease;
+}
+a:hover {
+    color: white; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+}
+#link-tabela{
+    color: #4CAF50;
+    margin-bottom:1px;
+    text-align: right;
+    padding: 10px;
+    bottom: 5px;
+    text-decoration: none;
+}
+/* Scroll */
+.table-wrapper {
+    overflow-x: auto;
+    width: 100%;
+}
+/* PÓS TABLE */
+section.upe h2{
+    color: #4CAF50;
+    margin: 10px;
+    text-align: center;
+}
+/* Conteudo */
+section.conteudo .text {
+    background-color: #fff;
+    padding: 20px;
+    margin: 15px 0; /* remove margens / laterais */
+    border-radius: 10px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.212);
+    width: 100%;        /* Ocupar toda a largura disponível */
+    box-sizing: border-box; /* Inclui padding dentro da largura total */
+}
+section.conteudo h2,
+section.conteudo h3
+{
+    color: #4CAF50;
+    margin: 2px 0 15px;
+}
+section.conteudo a{
+    text-decoration: none;
+    color: inherit;
+}
+section.conteudo .text p{
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 5px 0 15px;
+    line-height: 1.3;
+    color: #555; 
+}
+section.conteudo .text ul{
+    padding-left: 30px;
+    list-style: disc;
+}
+ul.lista-estilo li {
+    margin-bottom: 12px;
+}
+
+/* Responsividade */
+/*Telas menores que 768px */
+@media (max-width: 768px) {
+
+    .texto {
+        position: static;
+        padding: 20px;
+        width: 100%;
+        max-width: none;
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    section.full-bg .ceifador-img {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .full-bg {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .full-bg .content {
+        padding: 10px;
+        width: 100%;
+    }
+
+    h1.com-barra::after {
+        width: 100%;
+    }
+
+    #link-topo {
+        font-size: 14px;
+        padding: 8px;
+        bottom: 5px;
+        right: 5px;
+    }
+
+    table, th, td {
+        font-size: 10px;
+        padding:8px;
+    }
+}
